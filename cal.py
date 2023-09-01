@@ -7,13 +7,12 @@ import calendar
 #show calendar of selected year
 def show_cal(event=None):
     gui = tk.Tk()
-    gui.config(background='grey')
     gui.title("Calendar")
-    gui.geometry("580x596") #width/height
     year = int(entry_box.get())
     gui_content = calendar.calendar(year)
     cal_year = tk.Label(gui, text=gui_content, font="Cousine 10 bold", justify='left')
     cal_year.grid(column=0, row=0, padx=0, pady=0)
+    #print (gui_content)
     gui.mainloop()
 
 
@@ -29,7 +28,7 @@ if __name__ == "__main__":
     exit_btn = tk.Button(new, text='Exit', width=4, command=new.destroy)
     
     #grid layout
-    cal_label.grid(column=0, row=0, padx=4, pady=4)
+    cal_label.grid(column=0, row=0, padx=4, pady=6)
     entry_label.grid(column=0, row=1, padx=4, pady=4)
     entry_box.grid(column=1, row=1, padx=4, pady=4)
     show_btn.grid(column=1, row=2, padx=4, pady=(16,2), sticky='w')
