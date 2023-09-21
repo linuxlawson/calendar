@@ -12,11 +12,13 @@ def show_cal(event=None):
     year = int(entry_box.get())
     gui_content = calendar.calendar(year)
     cal_year = tk.Label(gui, text=gui_content, font="Cousine 10 bold", justify='left')
-    cal_year.grid(column=0, row=0, padx=4, pady=0)
-    #print (gui_content)
+    cal_year.grid(column=0, row=0, padx=6, pady=0)
+    #print (gui_content) #prints in terminal
+
+    #todays date at bottom
     date = dt.datetime.now()
-    day_lab = tk.Label(gui, text=f"Today: {date:%B %d, %Y}", font="Cousine 8 normal")
-    day_lab.grid(padx=0, pady=0)
+    day_lab = tk.Label(gui, text=f"Today: {date:%B %d, %Y}", font="Cousine 8 normal", fg='#181818')
+    day_lab.grid(padx=0, pady=(0,2))
     gui.mainloop()
 
 
